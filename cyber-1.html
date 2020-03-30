@@ -1,0 +1,47 @@
+<html>
+<body>
+<br><br>
+<h2>Waldo's smartphone app periodically sends a message to a cloud hosted server instance using an api.</h2>
+<h3>Use the Row number (X-axis) and Column number (Y-axis) information of the photo grid from Game 'Waldo-1' where you tracked him and feed below to generate the api code for sending geolocation.</h3>
+<form id="myForm">
+  <label for="x-axis">Row (X-axis):</label>&nbsp;
+  <input type="number" id="x-axis" name="x-axis">
+  <br><br>
+  <label for="y-axis">Column (Y-axis):</label>&nbsp;
+  <input type="number" id="y-axis" name="y-axis">
+  <br><br>
+</form>
+
+<button onclick="myFunction()">Generate API</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myForm").elements[0].value;
+  var y = document.getElementById("myForm").elements[1].value;
+  if(window.btoa(x)=="NA==" && window.btoa(y)=="MTM=")
+  {
+  x = Number(x)+Number(11.5080);
+  x = x.toFixed(6);
+  y = Number(y)+Number(60.8097);	
+  y = y.toFixed(6);
+  var str = "lat=" + x + "&long=" + y;
+  var r = "http:\\\\whereiswaldo.edu\\api\\mygeo?" + window.btoa(str);
+  } 
+  else 
+  {
+  var r = "It seems you din't spot Waldo's x,y coordinates in the photo grid correctly!";
+  }
+  document.getElementById("demo").innerHTML = r;
+}
+</script>
+
+<br>
+<h1>Do you think information sent in this api is secure? Can you find out Waldo is in which city based on the api information?</h1>
+<br>
+
+&nbsp;
+<button onclick="document.location = 'index.html'">Back</button>
+</body>
+</html>
