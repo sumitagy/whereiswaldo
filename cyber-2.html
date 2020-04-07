@@ -1,0 +1,45 @@
+<html>
+<body>
+<br><br>
+<h2>Waldo regularly checks his office emails configured in the smartphone to keep updated of his "Wally Ice Cream" Business. His primary supplier is M/s RGH Enterprises.</h2>
+<h3>Use the Row number (X-axis) and Column number (Y-axis) information of the photo grid from Game 'Waldo-2' where you tracked 'Wizard Whitebeard' and feed below to access the login credentials for Waldo's mailbox.</h3>
+<form id="myForm">
+  <label for="x-axis">Row (X-axis):</label>&nbsp;
+  <input type="number" id="x-axis" name="x-axis">
+  <br><br>
+  <label for="y-axis">Column (Y-axis):</label>&nbsp;
+  <input type="number" id="y-axis" name="y-axis">
+  <br><br>
+</form>
+
+<button onclick="myFunction()">Show Credentials</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myForm").elements[0].value;
+  var y = document.getElementById("myForm").elements[1].value;
+  if(window.btoa(x)=="MTA=" && window.btoa(y)=="OQ==")
+  {
+var r = "Use these credentials to login:<br>username:<B>waldo</B><br> password:<B>odlaw</B><br>";
+
+  } 
+  else 
+  {
+  var r = "It seems you din't spot Wizard Whitebeard's x,y coordinates in the photo grid correctly!";
+  }
+  document.getElementById("demo").innerHTML = r;
+}
+</script>
+
+<br>
+<h2>Click here to <a href="waldo-login.html">Go to Login Page</a></h2>
+
+<h1>Can you identify the phishing attempts from waldo's inbox?</h1>
+<br>
+
+&nbsp;
+<button onclick="document.location = 'index.html'">Back</button>
+</body>
+</html>
